@@ -1,0 +1,7 @@
+h_size  CordConv    Converge
+512     No          Yes(880)
+512     Yes         Yes(880)
+256     Yes         Yes(1010)
+256     No          Yes(990)
+128     Yes         No(after 1205)
+128     No          No(after 1205)
