@@ -1,3 +1,4 @@
+# Dynamic routing capsules implemented from https://arxiv.org/pdf/1710.09829.pdf
 import numpy as np
 
 import tensorflow as tf
@@ -291,5 +292,5 @@ with tf.Session() as sess:
                 )
             )
 
-    saver.save(sess, "mnist-capsconv")
+        saver.save(sess, "mnist-capsconv", global_step=epoch)
 
