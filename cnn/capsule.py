@@ -1,4 +1,3 @@
-# Dynamic routing capsules implemented from https://arxiv.org/pdf/1710.09829.pdf
 import numpy as np
 
 import tensorflow as tf
@@ -254,7 +253,7 @@ y_batches = np.array_split(
     num_splits
 )
 
-losses = []
+epoch_losses = []
 saver = tf.train.Saver()
 with tf.Session() as sess:
     sess.run(tf.global_variables_initializer())
@@ -283,14 +282,14 @@ with tf.Session() as sess:
                         epoch_loss/batch_count
                     )
                 )                
-        losses.append(epoch_loss)
+        epoch_losses.append(epoch_loss)
         if epoch % 1 == 0:
             print(
                 "epoch: {} average loss: {}".format(
                     epoch,
-                    np.mean(losses[-5:])
+                    np.mean(epoch_losses[-5:])
                 )
             )
 
-        saver.save(sess, "mnist-capsconv", global_step=epoch)
+        saver.save(sess, "./mnist-capsconv", global_step=epoch)
 
