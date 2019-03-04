@@ -1,3 +1,5 @@
+#Implementation of "Dyanmic Routing of Capsules" https://arxiv.org/pdf/1710.09829.pdf
+
 import numpy as np
 
 import tensorflow as tf
